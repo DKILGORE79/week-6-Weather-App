@@ -2,44 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="Weather App" content="">
-    <meta name="Derek Kilgore" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>Weather App</title>
 
-    <!--Template based on URL below-->
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+	<meta charset="UTF-8">
+	<meta name="description" content="Weather Forecast" />
+	<meta name="keywords" content="Weather Forecast">
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Place your stylesheet here-->
-    <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+
+	<title>Weather Forecast</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	​
+	​
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <div class="col-md-12 text-white text-center ">
-        <div class="jumbotron bg-info">
-            <h3 class="display-3 font-weight-bold text-white"><i class="fa-solid fa-cloud-showers-water"></i>
-                Weather Dashboard
-                <i class="fa-solid fa-temperature-full"></i>
-            </h3>
-        </div>
+	<header>
+
+		<div class="col-md-12 text-white text-center ">
+			<div class="jumbotron bg-secondary bg-gradient">
+				<h3 class="display-4 font-weight-bold text-white"><i class="fas fa-sun"></i>
+					Weather Dashboard
+					<i class="fa-solid fa-temperature-high"></i>
+				</h3>
+			</div> ​
+		</div>
+
+	</header>
+
+
+	<main>
 
 
 
-        <!-- /.container -->
+		<div class="container">
+
+			<!-- This form will be used to input data about the weather -->
+
+			<div class="row align-items-center">
 
 
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+				<div class="col-sm col-md">
+
+					<input type="text" id="city-input" placeholder="Search for city...">
+
+					<!-- Button to trigger AJAX call -->
+					<button id="find-city" type="submit"><i class="fas fa-search"></i></button>
+
+
+
+					<div class="mt-3 list-group-item list-group-item-action border" id="buttons-view">
+					</div>
+
+
+				</div>
+
+				<!--card for single today temp-->
+
+				<div class="col-md-9">
+
+					<div class="card-body bg-white border border-dark-0" id="weather-result"></div>
+					<!--card background for 5 day-->
+
+					<div class="card-text bg-secondary bg-gradient row text-light" id="weather-forecast">
+						<h5 class="card-title">5-Day Forcast</h5>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+	<script src="./assets/js/script.js"></script>
 
 </body></html>
