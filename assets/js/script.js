@@ -113,7 +113,7 @@ function getWeatherToday(cityInput, callType) {
 
 			var humidity = $('<p>').text("Humidity: " + response.main.humidity + "%");
             
-		    var uvInd = $('<p>').html("UV Index: " + "<span class='badge badge-danger p-1'>" + response.value + "</span>");
+		
 
 
 
@@ -204,6 +204,7 @@ function getWeatherForecast(cityInput, APIKey) {
 
 	$.ajax({
 			url: queryURLFor,
+
 			method: "GET",
 
 		})
@@ -212,7 +213,7 @@ function getWeatherForecast(cityInput, APIKey) {
 
 
 			var getForInfo = response.list;
-
+			var currentDate = moment().format('MM/D/YYYY');
 
 			//divide by 8 since API updates weather every 3 hours a day
 			for (var i = 1; i <= getForInfo.length / 8; i++) {
@@ -221,9 +222,9 @@ function getWeatherForecast(cityInput, APIKey) {
 
 				//get epoch time and convert to date
 				var getForDate = getForInfo[i * 7].dt * 1000;
-				var getWeatherDate = new Date(getForDate).getDate();
-				var getWeatherMonth = new Date(getForDate).getMonth();
-				var getWeatherYear = new Date(getForDate).getFullYear();
+				// var getWeatherDate = new Date(getForDate).getDate();
+				// var getWeatherMonth = new Date(getForDate).getMonth();
+				// var getWeatherYear = new Date(getForDate).getFullYear();
 
 				var getForTemp = getForInfo[i * 7].main.temp;
 				var getForHum = getForInfo[i * 7].main.humidity;
@@ -241,8 +242,8 @@ function getWeatherForecast(cityInput, APIKey) {
 					"src": "https://openweathermap.org/img/w/" + getIcon + ".png"
 				});
 
-				var weatherForDate = $('<p>').html(getWeatherMonth + "/" + getWeatherDate + "/" + getWeatherYear);
-
+				// var weatherForDate = $('<p>').html(getWeatherMonth + "/" + getWeatherDate + "/" + getWeatherYear);
+				var weatherForDate = moment(currentDate, "DD-MM-YYYY").add(1, 'days');
 
 				var weatherIcon = $("<p>").append(iconURL);
 
