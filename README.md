@@ -15,7 +15,7 @@ the application provides the user with the following:
 - Five day forecast with the date, weather icon, temperature and humidity
 
 **IMAGES**
-![applicationImages](./images/preview%201.png) ![applicationImages](./images/preview%202.png) ![applicationImages](./images/preview%203.png)
+![](/assets/images/preview_1.png) ![](/assets/images/preview_2.png) ![](/assets/images/preview_3.png)
 
 ### APIs used to power Application
 
